@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nsoma_matriz_interna = getattr(undertest, 'soma_matriz_interna', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_1(self):\n        M2 = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]\n        assert soma_matriz_interna(M2, (1,1),(2,2)) == 5 + 6 + 8 + 9\n        \nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "matrizinterna.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG\n########################################################################\n\ndef soma_matriz_interna(M,p1, p2):\n\tl1, c1 = p1[0], p1[1]\n\tl2, c2 = p2[0], p2[1]\n\tsoma = 0\n\t\n\tfor i in range(l1, l2+1):\n\t\tfor j in range(c1 , c2+1):\n\t\t\tsoma += M[i][j]\n\t\n\treturn soma\n\t\nM2 = [ [1, 2, 3],\n       [4, 5, 6], \n       [7, 8, 9] ]\n\nassert soma_matriz_interna(M2, (1,1),(2,2)) == 5 + 6 + 8 + 9\n",
+      "name": "matrizinterna.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "8d56443e84cbf0c02afb530fa26c1762",
+  "iid": 5082877251289088,
+  "activity_revision": "1.0.1"
+}

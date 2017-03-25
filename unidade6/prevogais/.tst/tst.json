@@ -1,0 +1,19 @@
+{
+  "files": {
+    "prevogais.py": {
+      "category": "answer",
+      "data": "#coding: utf_8\n#Jos\u00e9 Ramon Fragoso da Silva 116210412\n#Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\npreletras = []\nletras = []\n\ndef pre_vogais(palavra):\n\tletras.append(palavra[len(letras)-1])\n\t\n\tfor i in range(1, len(palavra)):\n\t\tconso = palavra[i-1]\n\t\tv = palavra[i]\n\t\tif (v == \"a\" or v == \"e\" or v == \"i\" or v == \"o\"  or  v == \"u\"):\n\t\t\tif conso != letras[(len(letras)-1)]:\n\t\t\t\tpreletras.append(conso.lower())\n\t\tif (v == \"A\" or v == \"E\" or v == \"I\" or v == \"O\"  or  v == \"U\"):\n\t\t\tif conso != letras[(len(letras)-1)]:\n\t\t\t\tpreletras.append(conso.lower())\n\treturn preletras\n\n\n\npre_vogais(\"Andrade\") \n\nprint preletras\n\n \n",
+      "name": "prevogais.py"
+    },
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\npre_vogais = getattr(undertest, 'pre_vogais', None)\n\nclass PublicTests(unittest.TestCase):\n\n   def test_exemplo(self):\n      assert pre_vogais(\"Andrade\") == ['r', 'd']\n      assert pre_vogais(\"exemplo\") == ['x', 'l']\n      assert pre_vogais(\"hiaTO\") == ['h', 'i', 't']\n      assert pre_vogais(\"Arara\") == ['r']\n\n   def test_exemplo_2(self):\n      assert pre_vogais(\"Andrade\") == ['r', 'd']\n      assert pre_vogais(\"exemplo\") == ['x', 'l']\n      assert pre_vogais(\"hiaTO\") == ['h', 'i', 't']\n      assert pre_vogais(\"Arara\") == ['r']\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "a1342144f91103a9109c0a85d6fff8d0",
+  "iid": 5808857989251072,
+  "activity_revision": "1.1.4"
+}

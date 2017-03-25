@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nget_items = getattr(undertest, 'get_items', None)\n\nclass PublicTests(unittest.TestCase):\n\n   def test_exemplo(self):\n       valores = [18, 22, 73, 32, 19, 21, 43]\n       indices2 = [3, 4, 8, 1]\n       assert get_items(valores, indices2) == [32, 19, None, 22]\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "getitens.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fraagoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef  get_items(valores, indices):\n\titens = []\n\tfor i in range(len(indices)):\n\t\ta = indices[i]\n\t\tif len(valores) == 0:\n\t\t\titems = []\n\t\t\tbreak\n\t\tif valores == [0]:\n\t\t\titens = [0]\n\t\t\tbreak\n\t\tif a < len(valores):\n\t\t\titens.append(valores[a])\n\t\telse:\n\t\t\titens.append(None)\n\t\tprint a\n\t\tprint itens\n\treturn itens\n\tprint itens\n\n\nvalores = [0]\nindices = [3, 4, 8, 1]\nget_items(valores, indices)\n",
+      "name": "getitens.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "666534c2f45730ffb839cd1153c8cb57",
+  "iid": 5215930774716416,
+  "activity_revision": "2.0.0"
+}

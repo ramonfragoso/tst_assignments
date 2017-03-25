@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nsubtrai_polinomios = getattr(undertest, 'subtrai_polinomios', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_exemplo_1(self):\n        p1 = [-5, 4, 3]\n        p2 = [-1, 0, 2, 0, 0, 0, 5]\n        assert subtrai_polinomios(p1, p2) == [-4, 4, 1, 0, 0, 0, -5]\n\n    def test_exemplo_2(self):\n        p1 = [-5, 4, 3]  # 3x2 + 4x - 5\n        p2 = [-4, 2, 3]  # 3x2 + 2x - 4\n        assert subtrai_polinomios(p1, p2) == [-1, 2]  # 2x - 1\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "subtracao.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\nimport math\n\ndef subtrai_polinomios(p1, p2):\n\tnovopoli = []\n\tif len(p2)>= len(p1):\n\t\tfor i in range(len(p1)):\n\t\t\tif p1[i] - p2[i] != 0:\n\t\t\t\tnovopoli.append(p1[i] - p2[i])\n\t\t\tindicefinal = i+1\n\t\t\t\n\t\tfor i in range(indicefinal, len(p2)):\n\t\t\tif p2[i] < 0:\n\t\t\t\tnovopoli.append(abs(p2[i]))\n\t\t\telif p2[i] > 0:\n\t\t\t\tnovopoli.append(p2[i]*(-1))\n\t\t\telse:\n\t\t\t\tnovopoli.append(p2[i])\n\telif len(p2) < len(p1):\n\t\tfor i in range(len(p2)):\n\t\t\tif p1[i] - p2[i] != 0:\n\t\t\t\tnovopoli.append(p1[i] - p2[i])\n\t\t\tindicefinal = i+1\n\t\t\t\n\t\tfor i in range(indicefinal, len(p1)):\n\t\t\tnovopoli.append(p1[i])\n\t\t\n\treturn novopoli\n\t\n\t\n\t\n\t\n\t\n\t\np1 = [-1, 0, 2, 0, 0, 0, 5]\np2 = [-5, 4, 3]\nsubtrai_polinomios(p1, p2) \n",
+      "name": "subtracao.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "936cb4218301c4a0c039c40b950df76d",
+  "iid": 6343471895937024,
+  "activity_revision": "1.0.0"
+}

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "obfuscation.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva\n# PROG1 UFCG - jose.ramon.silva@ccc.ufcg.edu.br\n# Atividade: Obsfuscation\n########################################################################\n\n\ndef obfuscation(palavra):\n\tcont = 0\n\tnovapalavra = \"\"\n\tsegunda = \"\"\n\tfor i in range(len(palavra)):\n\t\tif palavra[i].isupper() == True:\n\t\t\tnovapalavra += palavra[i].lower()\n\t\telif palavra[i].islower() == True:\n\t\t\tnovapalavra += palavra[i].upper()\n\t\telif palavra[i].isalpha() == False:\n\t\t\tnovapalavra += palavra[i]\n\t\t\n\t\t\n\tfor i in range(len(novapalavra)):\n\t\tif novapalavra[i] != \" \":\n\t\t\tcont += 1\n\t\tif novapalavra[i] == \"A\" or novapalavra[i] == \"a\":\n\t\t\tsegunda += \"4\"\n\t\telif novapalavra[i] == \"B\" or novapalavra[i] == \"b\":\n\t\t\tsegunda += \"8\"\n\t\telif novapalavra[i] == \"E\" or novapalavra[i] == \"e\":\n\t\t\tsegunda += \"3\"\n\t\telif novapalavra[i] == \"G\" or novapalavra[i] == \"g\":\n\t\t\tsegunda += \"6\"\n\t\telif novapalavra[i] == \"I\" or novapalavra[i] == \"i\":\n\t\t\tsegunda += \"1\"\n\t\telif novapalavra[i] == \"L\" or novapalavra[i] == \"l\":\n\t\t\tsegunda += \"7\"\n\t\telif novapalavra[i] == \"S\" or novapalavra[i] == \"s\":\n\t\t\tsegunda += \"5\"\n\t\telif novapalavra[i] == \"O\" or novapalavra[i] == \"o\":\n\t\t\tsegunda += \"0\"\n\t\telif novapalavra[i] == \"4\":\n\t\t\tsegunda += \"A\"\n\t\telif novapalavra[i] == \"8\":\n\t\t\tsegunda += \"B\"\n\t\telif novapalavra[i] == \"3\":\n\t\t\tsegunda += \"E\"\n\t\telif novapalavra[i] == \"6\":\n\t\t\tsegunda += \"G\"\n\t\telif novapalavra[i] == \"1\":\n\t\t\tsegunda += \"I\"\n\t\telif novapalavra[i] == \"7\":\n\t\t\tsegunda += \"L\"\n\t\telif novapalavra[i] == \"5\":\n\t\t\tsegunda += \"S\"\n\t\telif novapalavra[i] == \"0\":\n\t\t\tsegunda += \"O\"\n\t\telif novapalavra[i] == \" \":\n\t\t\tfor i in range(cont):\n\t\t\t\tsegunda += \"*\"\n\t\t\t\tcont = 0\n\t\telse:\n\t\t\tsegunda += novapalavra[i]\n\n\tprint segunda\n\n\t\t\n\t\t\t\t\ndef main():\n\twhile True:\n\t\tpalavra = raw_input()\n\t\tif palavra == \"fim\": break\n\t\telse:\n\t\t\tobfuscation(palavra)\n\t\t\t\nif __name__ == \"__main__\":\n\tmain()\n\t\t\t\n\n\t\n",
+      "name": "obfuscation.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "5994b45359fb5f86a6192ddf9268d003",
+  "iid": 5047231170215936,
+  "activity_revision": "1.0.0"
+}

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "conversao.py": {
+      "category": "answer",
+      "data": "# coding:utf-8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG\n########################################################################\nvalores = []\n\nwhile True:\n\tconversao = raw_input()\n\tif conversao == \"fim\":\n\t\tbreak\t\n\tconversao = conversao.split()\n\treal = conversao[1]\n\tmoeda = conversao[3]\n\n\tif moeda == \"$\":\n\t\tvalor = float(real) * 2.58\n\t\tprint \"R$ %.2f = $ %.2f\" %(float(real), valor)\n\n\t\t\n\telif moeda == \"U$\":\n\t\tvalor = float(real) * 0.49\n\t\tprint \"R$ %.2f = U$ %.2f\" %(float(real), valor)\n\t\t\n\telif moeda == \"\u20ac\":\n\t\tvalor = float(real) * 0.38\n\t\tprint \"R$ %.2f = \u20ac %.2f\" %(float(real), valor)\n\n\t\t\n",
+      "name": "conversao.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "9bf88dc0a5afc77b72e0332ebee9b026",
+  "iid": 6035285242544128,
+  "activity_revision": "1.0.1"
+}

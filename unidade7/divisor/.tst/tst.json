@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\ndivisor = getattr(undertest, 'divisor', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_exemplo(self):\n        lista1 = [100,10,40,50]\n        lista2 = [3,15,50,23,5]\n        assert divisor(10, lista1) == 0\n        assert divisor(5, lista2) == 1\n        \nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "divisor.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef divisor(num, lista):\n\tindice = -1\n\tfor i in range(len(lista)):\n\t\tif lista[i]%num == 0:\n\t\t\tindice = i\n\t\t\tbreak\n\t\t\t\n\treturn indice\n\t\nlista1 = [100,10,40,50]\nlista2 = [3,15,50,23,5]\nassert divisor(10, lista1) == 0\nassert divisor(5, lista2) == 1\n",
+      "name": "divisor.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "3391fb9840a414e36658fc2569ef29b9",
+  "iid": 5140225802108928,
+  "activity_revision": "1.0.0"
+}

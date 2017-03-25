@@ -1,0 +1,14 @@
+{
+  "files": {
+    "octal.py": {
+      "category": "answer",
+      "data": "#coding: utf_8\n#Jos\u00e9 Ramon Fraagoso da Silva 116210412\n#Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n#######################################################################\n\nn = raw_input()\nresults = []\nsom = (len(n)-1)\n\nfor i in range(len(n)):\n\thugo = int(n[i])\n\t\n\tocta = (hugo * (8**som))\n\tprint\"%i * 8^%i = %i\"%(hugo ,som ,octa)\n\tresults.append(octa)\n\tsom -= 1\n\t\nsom = 0\n\nfor i in range(0, len(results)):\n\tsom += results[i]\n\t\nprint\"%s(8) = %i(10)\" %(n, som)\n",
+      "name": "octal.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "a13bad6610c49ee18d6fa282456b39cd",
+  "iid": 5357206811705344,
+  "activity_revision": "1.1.1"
+}

@@ -1,0 +1,19 @@
+{
+  "files": {
+    "bebados.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva - 116210412\n# Prog1 UFCG - jose.ramon.silva@ccc.ufcg.edu.br\n# Atividade: Quem bebeu mais menos\n########################################################################\n\ndef quem_bebeu_mais_menos(sabado, domingo):\n\tsabgarrafas, domgarrafas = [], []\n\n\t# soma quantidade de garrafas\n\tfor i in range(len(sabado)):\n\t\tgarrafas = 0\n\t\tfor j in range(len(sabado[i])):\n\t\t\tgarrafas += sabado[j][i]\n\t\tsabgarrafas.append(garrafas)\n\n\tfor i in range(len(domingo)):\n\t\tgarrafas = 0\n\t\tfor j in range(len(domingo[i])):\n\t\t\tgarrafas += domingo[j][i]\n\t\tdomgarrafas.append(garrafas)\n\t\n\t\n\t# soma a quantidade de garrafas dos dois dias e poe em uma lista\n\ttotal_garrafas = []\n\tfor i in range(len(domgarrafas)):\n\t\ttotal_garrafas.append(domgarrafas[i]+ sabgarrafas[i])\n\t\n\t\n\t# verifica qual o maior e o menor numero de garrafas\n\t\n\tmaior, menor = total_garrafas[0], total_garrafas[0]\n\tindicemaior, indicemenor = 0, 0\n\tfor i in range(len(total_garrafas)):\n\t\tif maior <= total_garrafas[i]:\n\t\t\tmaior = total_garrafas[i]\n\t\t\tindicemaior = i\n\t\tif menor >= total_garrafas[i]:\n\t\t\tmenor = total_garrafas[i]\n\t\t\tindicemenor = i\n\t\t\t\n\treturn (indicemaior+1, indicemenor+1)\n\t\n\t\t\n\nsabado = [[1,2,3,4,5], \n\t\t  [0,1,2,3,1], \n\t\t  [2,1,0,1,2], \n\t\t  [3,1,2,1,3], \n\t\t  [4,1,3,0,0]]\n\t\t  \ndomingo = [[0,1,1,0,1], \n\t\t   [1,2,2,0,2], \n\t\t   [2,3,1,1,1], \n\t\t   [3,4,2,0,0], \n\t\t   [4,3,3,0,0]]\nprint quem_bebeu_mais_menos(sabado, domingo)\n",
+      "name": "bebados.py"
+    },
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nquem_bebeu_mais_menos = getattr(undertest, 'quem_bebeu_mais_menos', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_1(self):\n        sabado = [[1,2,3], [0,1,0], [3,1,2]]\n        domingo = [[2,1,3], [0,2,1], [1,1,2]]\n        assert quem_bebeu_mais_menos(sabado, domingo) == (3,1)\n        \n    def test_2(self):\n        sabado = [[1,2,3,4,5], [0,1,2,3,1], [2,1,0,1,2], [3,1,2,1,3], [4,1,3,0,0]]\n        domingo = [[0,1,1,0,1], [1,2,2,0,2], [2,3,1,1,1], [3,4,2,0,0], [4,3,3,0,0]]\n        assert quem_bebeu_mais_menos(sabado, domingo) == (1,4)\n        \nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "5a2f115987c55176035dd8387d45c1d6",
+  "iid": 4873163930337280,
+  "activity_revision": "1.0.0"
+}

@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nmaioridade_penal = getattr(undertest, 'maioridade_penal', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_basico_1(self):\n        assert maioridade_penal(\"Jansen Italo Ana\",\"14 21 60\") == \"Italo Ana\"\n        \nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "maipenal.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef maioridade_penal(nome, idade):\n\tnome = nome.split(\" \")\n\tidade = idade.split(\" \")\n\tmaiores = []\n\tfor i in range(0, len(nome)):\n\t\tif int(idade[i]) >= 18:\n\t\t\tmaiores.append(nome[i])\n\tmair = ' '.join(maiores)\n\treturn mair\nmaioridade_penal(\"Jansen Italo Ana\",\"14 21 60\")\n#assert maioridade_penal(\"Jansen Italo Ana\",\"14 21 60\") == \"Italo Ana\"\n",
+      "name": "maipenal.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "a5207a432dbd0945511b17dc9d0cfe91",
+  "iid": 5845483389976576,
+  "activity_revision": "1.0.0"
+}

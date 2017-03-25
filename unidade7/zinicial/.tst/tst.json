@@ -1,0 +1,14 @@
+{
+  "files": {
+    "zinicial.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fraagoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef z_inicial(lista):\n\tnum = 0\n\tfor i in range(len(lista)):\n\t\tif (lista[i])[0] == \"z\" or (lista[i])[0] == \"Z\":\n\t\t\tnum += 1\n\treturn num\n\t\t\t\ndef main():\n\tpalavras = raw_input()\n\tpalavras = palavras.split()\n\tprint z_inicial(palavras)\n\t\n\nif __name__ == '__main__':\n\tmain()\n",
+      "name": "zinicial.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "79cf99781f6d8788b81de3ed4cd55eb1",
+  "iid": 6675046592413696,
+  "activity_revision": "1.0.0"
+}

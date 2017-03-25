@@ -1,0 +1,11 @@
+{
+  "tests": [
+    {
+      "category": "public",
+      "input": "3\n",
+      "type": "io",
+      "name": "triangulo",
+      "output": "3 lados => 0 diagonais\n"
+    }
+  ]
+}

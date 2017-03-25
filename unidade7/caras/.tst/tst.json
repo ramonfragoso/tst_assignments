@@ -1,0 +1,13 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nsequencia_caras = getattr(undertest, 'sequencia_caras', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_1_exemplo(self):\n        jogo1 = [0,1,1,0,1,0,0,0]\n        jogo2 = [1,0,1]\n        jogo3 = [0,1,1,1,0]\n\n        assert sequencia_caras( jogo1 ) == 2\n        assert sequencia_caras( jogo2 ) == 1\n        assert sequencia_caras( jogo3 ) == 3\n\n        \nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    }
+  },
+  "iid": 5286460915712000,
+  "kind": "assignment",
+  "activity_revision": "1.0.1",
+  "name": null
+}

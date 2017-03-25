@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nquantidade_usuarios = getattr(undertest, 'quantidade_usuarios', None)\n\nclass PublicTests(unittest.TestCase):\n \n    def test_example(self):\n\n        lsd = {1234:['Andrey'], 1226:['Nazareno', 'Livia'], 9999:['administrador'] }\n        deq = {1114:['Ana'] }\n\n        assert quantidade_usuarios(lsd) == 3\n        assert quantidade_usuarios(deq) == 1\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "usuarios.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva - 116210412\n# Prog1 UFCG - jose.ramon.silva@ccc.ufcg.edu.br\n# Atividade: Quantidade de usu\u00e1rios\n########################################################################\n\ndef quantidade_usuarios(local):\n\tusuarios = 0\n\t\n\tfor i in local.values():\n\t\tfor j in range(len(i)):\n\t\t\tif i[j] != 'administrador':\n\t\t\t\tusuarios += 1\n\t\n\treturn usuarios\n\nlsd = {1234:['Andrey'], 1226:['Nazareno', 'Livia'], 9999:['administrador'] }\ndeq = {1114:['Ana'] }\n\nprint quantidade_usuarios(deq)\n",
+      "name": "usuarios.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "2dea3d15a06805ce340838284e4bd280",
+  "iid": 5874647895638016,
+  "activity_revision": "1.0.0"
+}

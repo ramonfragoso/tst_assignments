@@ -1,0 +1,14 @@
+{
+  "files": {
+    "extrato.py": {
+      "category": "answer",
+      "data": "# coding:utf-8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG\n########################################################################\n\nlimite = int(raw_input())\nsaldo = float(raw_input())\nsaques = 0\n\nwhile True:\n\toperacao = raw_input().split()\n\top = operacao[0]\n\tvalor = float(operacao[1])\n\n\tif op == \"saque\":\n\t\tsaques += 1\n\t\tif saques > limite:\n\t\t\tprint\"Opera\u00e7\u00e3o inv\u00e1lida: %s %.2f.\" %(op, valor)\n\t\t\tbreak\n\t\t\t\n\t\tif saldo - valor < 0:\n\t\t\tprint\"Opera\u00e7\u00e3o inv\u00e1lida: %s %.2f.\" %(op, valor)\n\t\t\tbreak\n\n\t\tsaldo = saldo - valor\n\t\t\t\n\tif op == \"dep\u00f3sito\":\n\t\tif valor > 1000.0:\n\t\t\tprint\"Opera\u00e7\u00e3o inv\u00e1lida: %s %.2f.\" %(op, valor)\n\t\t\tbreak\n\t\tsaldo += valor\n\t\nprint\"Seu saldo \u00e9 R$ %.2f.\" %saldo\n\n",
+      "name": "extrato.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "4ba7f1d3b40dc24a962617df984f480a",
+  "iid": 6697973463384064,
+  "activity_revision": "1.0.2"
+}

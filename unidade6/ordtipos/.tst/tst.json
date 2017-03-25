@@ -1,0 +1,19 @@
+{
+  "files": {
+    "ordtipos.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fraagoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef ordena_tipos(seq):\n\tnum = []\n\tcarac = []\n\tnumcarac = []\n\tseqfinal = []\n\tfor i in range(len(seq)):\n\t\tif seq[i].isalpha() == True:\n\t\t\tcarac.append(seq[i])\n\t\telif seq[i].isdigit() == True:\n\t\t\tnum.append(seq[i])\n\t\telse:\n\t\t\tnumcarac.append(seq[i])\n\t\n\tprint num, carac, numcarac\n\t\n\tfor i in range(len(num)):\n\t\tseqfinal.append(num[i])\n\tfor i in range(len(carac)):\n\t\tseqfinal.append(carac[i])\n\tfor i in range(len(numcarac)):\n\t\tseqfinal.append(numcarac[i])\n\t\t\n\treturn seqfinal\n\nassert ordena_tipos(['1a', '2', 'e', '4', '4.4', 'e6', '8']) == ['2', '4', '8', 'e', '1a', '4.4', 'e6']\n",
+      "name": "ordtipos.py"
+    },
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nordena_tipos = getattr(undertest, 'ordena_tipos', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_basico(self):\n        assert ordena_tipos(['1a', '2', 'e', '4', '4.4', 'e6', '8']) == ['2', '4', '8', 'e', '1a', '4.4', 'e6']\n\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "e52cbfb783e8d7097f7fa813fca1b6bc",
+  "iid": 5294578605228032,
+  "activity_revision": "1.0.0"
+}

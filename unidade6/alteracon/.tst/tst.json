@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\ninverte2a2 = getattr(undertest, 'inverte2a2', None)\n\nclass PublicTests(unittest.TestCase):\n\n   def test_basico(self):\n       seq = [10,20,30,40,50,60]\n       inverte2a2(seq)\n       assert seq == [20,10,40,30,60,50]\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "altera.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef inverte2a2(seq):\n\tsom = 1\n\tfor i in range(0, len(seq)+1, 2):\n\t\tif som >= len(seq): break\n\t\t\n\t\tif seq[i] < seq[som] or seq[i] > seq[som]:\n\t\t\tseq[i], seq[som] = seq[som], seq[i]\n\n\t\tsom += 2\n\tprint seq\n\treturn seq\n\t \n\nseq = [1,2,3,4,5,6]\ninverte2a2(seq)\n#assert seq == [2,1,4,3,6,5]\n\nseq = [1,2,3,4,5]\ninverte2a2(seq)\n#assert seq == [2,1,4,3,5]\n",
+      "name": "altera.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "6ffc1b2add72555c3c1765f282e68cf3",
+  "iid": 5772396736806912,
+  "activity_revision": "1.0.0"
+}

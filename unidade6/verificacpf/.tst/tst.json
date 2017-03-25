@@ -1,0 +1,24 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\ncalcula_digitos_verificacao = getattr(undertest, 'calcula_digitos_verificacao', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_basico(self):\n        assert calcula_digitos_verificacao('153245875') == '40'\n\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "verificacpf.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef calcula_digitos_verificacao(numero):\n\n\t#PRIMEIRO DIGITO\n\tdigito1 = 0\n\tcont = 2\n\tfor i in range(len(numero)-1, -1, -1):\n\t\tdigito1 += int(numero[i]) * cont\n\t\tcont += 1\n\tdigito1 = (digito1*10)%11\n\tif digito1 == 10:\n\t\tdigito1 = 0\n\t\t\n\t#SEGUNDO DIGITO\n\tdigito2 = digito1 * 2\n\tcont = 3\n\tfor i in range(len(numero)-1, -1, -1):\n\t\tdigito2 += int(numero[i]) * cont\n\t\tcont += 1\n\tdigito2 = (digito2*10)%11\n\t\n\n\tif digito2 == 10:\n\t\tdigito2 = 0\n\n\tnum = str(digito1) + str(digito2)\n\treturn num\n\ncalcula_digitos_verificacao('153245875')\n\t\n",
+      "name": "verificacpf.py"
+    },
+    "verifica.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef calcula_digitos_verificacao(numero):\n\n\t#PRIMEIRO DIGITO\n\tdigito1 = 0\n\tcont = 2\n\tfor i in range(len(numero)-1, -1, -1):\n\t\tdigito1 += int(numero[i]) * cont\n\t\tcont += 1\n\tdigito1 = (digito1*10)%11\n\n\t#SEGUNDO DIGITO\n\tdigito2 = digito1 * 2\n\tcont = 3\n\tfor i in range(len(numero)-1, -1, -1):\n\t\tdigito2 += int(numero[i]) * cont\n\t\tcont += 1\n\t\n\tdigito2 = (digito2*10)%11\n\tdigito2\n\t\n\tnum = str(digito1) + str(digito2)\n\treturn num\n\ncalcula_digitos_verificacao('153245875')\n\t\n",
+      "name": "verifica.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "bb7a7f1a80e9f4c4ca4da9f115d6f462",
+  "iid": 5785418003906560,
+  "activity_revision": "1.0.1"
+}

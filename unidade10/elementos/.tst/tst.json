@@ -1,0 +1,14 @@
+{
+  "files": {
+    "elementos.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva - 116210412\n# Prog1 UFCG - jose.ramon.silva@ccc.ufcg.edu.br\n# Atividade: Elementos Qu\u00edmicos\n########################################################################\n\n\ntabela = {'H': 1, 'S': 32, 'O': 16, 'C': 12, 'Ca': 40, 'Na': 23, 'P': 31}\n\nsaidas = []\n\nwhile True:\n        elemento = raw_input().split()\n        if elemento[0] == 'fim': \n\t\t\tbreak\n        somas = []\n\t\t\n        for i in range(len(elemento)):\n                for j in tabela.keys():\n                        if elemento[i] == j:\n                                massa = tabela[j]\n                                if i == len(elemento)-1:\n                                        massa = tabela[j]\n                                        somas.append(massa)\n                                        break\n                                elif not elemento[i+1].isdigit():\n                                        massa = tabela[j]\n                                        somas.append(massa)\n                        if elemento[i].isdigit():\n                                massa = int(elemento[i])*massa\n                                somas.append(massa)\n                                break\n\n        soma = 0\n        for i in range(len(somas)):\n                soma += somas[i]\n        saidas.append(soma)\n        soma = 0\n\nfor i in saidas:\n        print i\n",
+      "name": "elementos.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "d18ac5b57990c5b711a97b9ee0ed1db1",
+  "iid": 4956226718793728,
+  "activity_revision": "1.0.0"
+}

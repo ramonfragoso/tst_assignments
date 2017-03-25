@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "#!/usr/bin/env python\nimport unittest\nimport sys\nimport imp\n\nclass PublicTests(unittest.TestCase):\n\n    def test_simples(self):\n        lista = [1,2,3]\n        assert soma_diminui_vizinhos(lista) == 0\n\n    def test_vazio(self):\n        lista = []\n        assert soma_diminui_vizinhos(lista) == 0\n\n\nif __name__ == '__main__':\n\n    undertest = imp.load_source(\"undertest\", sys.argv[-1])\n    soma_diminui_vizinhos = undertest.soma_diminui_vizinhos\n    del sys.argv[-1]\n    unittest.main()\n",
+      "name": "public_tests.py"
+    },
+    "vizinhos.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG -- jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef soma_diminui_vizinhos(lista):\n\tif lista == [] or len(lista) == 1:\n\t\treturn 0\n\t\t\t\t\n\telse:\n\t\tresult = lista[0]+lista[1]\n\t\n\tfor i in range(2, len(lista)):\n\t\tif i%2 == 0:\n\t\t\tresult -= lista[i]\n\t\telif i%2 != 0:\n\t\t\tresult += lista[i]\n\t\tprint result\n\treturn result \t\t\n\t\t\nsoma_diminui_vizinhos([0])\n",
+      "name": "vizinhos.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "14ae0587882f11d2b8e2f7054a2ac800",
+  "iid": 6625467637432320,
+  "activity_revision": "4.0.1"
+}

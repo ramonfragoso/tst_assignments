@@ -1,0 +1,19 @@
+{
+  "files": {
+    "zera.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva - 116210412\n# Prog1 UFCG - jose.ramon.silva@ccc.ufcg.edu.br\n# Atividade: Zera nao-nulos\n########################################################################\n\ndef zera_nao_nulos(jogo, l, c):\n\t\n\tif jogo[l][c] == 0:\n\t\treturn jogo\n\t\n\t# zera linha pela direita\n\tfor i in range(len(jogo)):\n\t\tfor j in range(len(jogo[i])):\n\t\t\tif i == l and j >= c:\n\t\t\t\tif jogo[i][j] == 0: break\n\t\t\t\telse:\n\t\t\t\t\tjogo[i][j] = 0\n\t\n\t# zera linha pela esquerda\n\tfor i in range(len(jogo)):\n\t\tfor j in range(len(jogo), -1, -1):\n\t\t\tif i == l and j < c:\n\t\t\t\tif jogo[i][j] == 0: break\n\t\t\t\telse:\n\t\t\t\t\tjogo[i][j] = 0\n\t\t\n\t# zera de cima pra baixo\t\n\tfor i in range(len(jogo)):\n\t\tfor j in range(len(jogo[i])):\n\t\t\tif i == c and j > l:\n\t\t\t\tif jogo[j][i] == 0: break\n\t\t\t\telse:\n\t\t\t\t\tjogo[j][i] = 0\n\n\t# zera de baixo pra cima\t\t\t\t\t\t\t\t\n\tfor i in range(len(jogo)):\n\t\tfor j in range(len(jogo[i])-1, -1, -1):\n\t\t\tif i == c and j < l:\n\t\t\t\tif jogo[j][i] == 0: break\n\t\t\t\telse:\n\t\t\t\t\tjogo[j][i] = 0\n\t\n\t\n\treturn jogo\n\t\t\t\n\t\njogo = [\n    [1, 1, 1, 1, 1, 1],\n    [1, 0, 0, 0, 1, 1],\n    [1, 1, 1, 1, 1, 1],\n    [1, 1, 1, 1, 1, 1],\n    [1, 1, 1, 1, 1, 1],\n    [1, 1, 1, 1, 1, 1],\n]    \n\nzera_nao_nulos(jogo, 3, 2)\nprint jogo\n",
+      "name": "zera.py"
+    },
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nzera_nao_nulos = getattr(undertest, 'zera_nao_nulos', None)\n\nclass PublicTests(unittest.TestCase):\n\n   def test_exemplo(self):\n        jogo = [\n            [1, 1, 1, 1, 1, 1],\n            [1, 0, 0, 0, 1, 1],\n            [1, 1, 1, 1, 1, 1],\n            [1, 1, 1, 1, 1, 1],\n            [1, 1, 1, 1, 1, 1],\n            [1, 1, 1, 1, 1, 1],\n        ]    \n        zera_nao_nulos(jogo, 3, 2)\n        assert jogo == [\n            [1, 1, 1, 1, 1, 1],\n            [1, 0, 0, 0, 1, 1],\n            [1, 1, 0, 1, 1, 1],\n            [0, 0, 0, 0, 0, 0],\n            [1, 1, 0, 1, 1, 1],\n            [1, 1, 0, 1, 1, 1],\n        ]\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "a29ad0a8d9cac482a30c43342425fa30",
+  "iid": 4564338601885696,
+  "activity_revision": "1.0.4"
+}

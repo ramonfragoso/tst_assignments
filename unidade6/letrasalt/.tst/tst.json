@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nletras_alternadas = getattr(undertest, 'letras_alternadas', None)\n\nclass PublicTests(unittest.TestCase):\n\n   def test_basico(self):\n       assert letras_alternadas('casa') == 'cs'\n\n   def test_basico1(self):\n       assert letras_alternadas('exemplo') == 'eepo'\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "letrasalt.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef letras_alternadas(string):\n\tletrasalt = \"\"\n\tfor i in range(0, len(string), 2):\n\t\tletrasalt += string[i]\n\treturn letrasalt\n\t\nletras_alternadas(\"casa\") \nletras_alternadas(\"exemplo\") \n",
+      "name": "letrasalt.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "76c43f470fe07b10f8fc79f4f9feb910",
+  "iid": 5272141696073728,
+  "activity_revision": "4.0.0"
+}

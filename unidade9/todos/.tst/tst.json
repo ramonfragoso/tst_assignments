@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nbusca_matriz = getattr(undertest, 'busca_matriz', None)\n\nclass PublicTests(unittest.TestCase):\n    def test_exemplo_1(self):\n        matriz = [\n            [2, 3, 5, 3, 1],\n            [3, 2, 1, 5, 6],\n            [1, 2, 3, 2, 1],\n        ]\n        assert busca_matriz(matriz, 4) == []\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "todos.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva - 116210412\n# Prog1 UFCG - jose.ramon.silva@ccc.ufcg.edu.br\n# Atividade: Busca Todos em Matriz\n########################################################################\n\ndef busca_matriz(m, e):\n\tindices = []\n\t\n\tfor i in range(len(m)):\n\t\tfor j in range(len(m[i])):\n\t\t\tif m[i][j] == e:\n\t\t\t\tindices.append((i, j))\n\t\n\treturn indices\n\t\t\t\t\n\t\t\t\t\n",
+      "name": "todos.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "9e8b0de537c56bec03fa38e2efd87e17",
+  "iid": 6710585299304448,
+  "activity_revision": "1.0.0"
+}

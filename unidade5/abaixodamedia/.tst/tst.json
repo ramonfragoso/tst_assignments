@@ -1,0 +1,14 @@
+{
+  "files": {
+    "abaixodamedia.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\nvalores = []\nsoma = 0\n\nwhile True:\n\tn = raw_input()\n\tif n == \"fim\": break\n\tn = int(n)\n\tvalores.append(n)\n\tsoma += n\n\t\nmedia = float(soma) / len(valores)\nprint \"%.2f\"%media\nfor i in range(0, len(valores)):\n\tif valores[i] < media:\n\t\tprint (i+1), valores[i]\n\tif i > len(valores)-1: break\n",
+      "name": "abaixodamedia.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "b9b91d8ccc8d1338c78f31a9670a86c3",
+  "iid": 6119092134084608,
+  "activity_revision": "1.0.1"
+}

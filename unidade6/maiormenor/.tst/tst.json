@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nretorna_maior_menor = getattr(undertest, 'retorna_maior_menor', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_basico1(self):\n        assert retorna_maior_menor([10,6,7,15,8]) == [15,6]\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "maiormenor.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef retorna_maior_menor(seq):\n\tmaior = seq[0]\n\tmenor = seq[0]\n\tmaimen = []\n\n\tfor i in range(0, len(seq)):\n\t\t\n\t\tif menor > seq[i]:\n\t\t\tmenor = seq[i]\n\t\t\t\n\t\tif maior < seq[i]:\n\t\t\tmaior = seq[i]\n\t\tprint maior, menor\n\t\n\tmaimen.append(maior)\n\tmaimen.append(menor)\n\treturn maimen\n\t\nassert retorna_maior_menor([10,6,7,15,8]) == [15,6]\n",
+      "name": "maiormenor.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "8374b7b23763f4829be4916870c6f7e1",
+  "iid": 5906723114057728,
+  "activity_revision": "1.0.0"
+}

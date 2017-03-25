@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nunico = getattr(undertest, 'unico', None)\n\nclass PublicTests(unittest.TestCase):\n\n   def test_basico(self):\n       assert unico(\"aa***xxxzzb+++\") == \"a*xzb+\"\n\n   def test_string_vazia(self):\n       assert unico(\"\") == \"\"\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "unico.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG -- jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef unico(caracteres):\n\tnovastring = \"\"\n\tcontador = 1\n\tfor i in range(0, len(caracteres)):\n\t\tif contador >= len(caracteres): \n\t\t\tnovastring += caracteres[i]\n\t\t\tbreak\n\t\tif caracteres[i] != caracteres[contador]:\n\t\t\tnovastring += caracteres[i]\n\t\tcontador += 1\n\tprint novastring\n\treturn novastring\n\t\t\nassert unico(\"aa***xxxzzb+++\") == \"a*xzb+\"\n",
+      "name": "unico.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "e517d49526fccfddaf47ea49aa0565a5",
+  "iid": 6164647174471680,
+  "activity_revision": "2.0.0"
+}

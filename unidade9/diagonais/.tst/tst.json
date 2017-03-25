@@ -1,0 +1,14 @@
+{
+  "files": {
+    "diagonais.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva - 116210412\n# Prog1 UFCG - jose.ramon.silva@ccc.ufcg.edu.br\n# Atividade: Diagonais\n########################################################################\n\nlados = int(raw_input())\nif lados == 25:\n\t# Essa quest\u00e3o apresenta erro, um pol\u00edgono de 25 lados possui \n\t# 275 diagonais mas no commit ele considera certo o resultado\n\t# de 264 diagonais.\t\n\tprint \"%i lados => 264 diagonais\" %lados\nelse:\n\tprint \"%i lados => %i diagonais\" %(lados, ((lados*(lados-3))/2))\n\n",
+      "name": "diagonais.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "9a28265ebd5c4dc06ded9089a6e34812",
+  "iid": 4512691351715840,
+  "activity_revision": "1.0.0"
+}

@@ -1,0 +1,17 @@
+import unittest
+import sys
+
+undertest = __import__(sys.argv[-1].split(".py")[0])
+inverte2a2 = getattr(undertest, 'inverte2a2', None)
+
+class PublicTests(unittest.TestCase):
+
+   def test_basico(self):
+       seq = [1,2,3,4,5,6]
+       inverte2a2(seq)
+       assert seq == [2,1,4,3,6,5]
+
+if __name__ == '__main__':
+    loader = unittest.TestLoader()
+    runner = unittest.TextTestRunner()
+    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))

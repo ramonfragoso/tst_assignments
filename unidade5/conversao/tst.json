@@ -1,0 +1,10 @@
+{
+  "tests": [
+    {
+      "category": "public",
+      "input": "R$ 1.00 para $\nfim\n",
+      "name": "exemplo2",
+      "output": "R$ 1.00 = $ 2.58\n"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "pesoideal.py": {
+      "category": "answer",
+      "data": "#coding: utf_8\n#Jos\u00e9 Ramon Fraagoso da Silva 116210412\n#Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\npesos = []\n\ndef calculaPeso(sexo, altura):\n\tif sexo == \"f\" or sexo == \"F\":\n\t\tpesoid = \"Mulher: peso ideal \u00e9 %.1f\"%((62.1 * altura) - 44.7)\n\t\tpesos.append(pesoid)\n\tif sexo == \"m\" or sexo == \"M\":\n\t\tpesoid = \"Homem: peso ideal \u00e9 %.1f\"%((72.7 * altura) - 58)\n\t\tpesos.append(pesoid)\n\nwhile True:\t\t\n\tdados = raw_input()\n\tif dados == \"****\": break\n\tl = dados.split()\n\tcalculaPeso(l[0], float(l[1]))\n\nfor i in range(len(pesos)):\n\tprint pesos[i]\n",
+      "name": "pesoideal.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "cf49e6018ecb07d0b4df6f02f30ddd20",
+  "iid": 5620636953083904,
+  "activity_revision": "1.0.5"
+}

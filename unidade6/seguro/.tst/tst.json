@@ -1,0 +1,19 @@
+{
+  "files": {
+    "seguro.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva\n# PROG1 UFCG - jose.ramon.silva@ccc.ufcg.edu.br\n# Atividade: C\u00e1lculo de Seguro\n########################################################################\ndef calcula_seguro(valor, respostas):\n\tpontos = 0\n\tfinal = []\n\tif respostas[0] <= 21:\n\t\tpontos += 20 \n\telif respostas[0] > 21 and respostas[0] <= 30:\n\t\tpontos += 15\n\telif respostas[0] > 30 and respostas[0] <= 40:\n\t\tpontos += 12\n\telif respostas[0] > 40 and respostas[0] <= 60:\n\t\tpontos += 10\n\telif respostas[0] > 60:\n\t\tpontos += 20\n\t\t\n\tif respostas[1] == True:\n\t\tpontos += 10\n\telif respostas[1] == False:\n\t\tpontos += 20\n\t\t\n\tif respostas[2] == True:\n\t\tpontos += 20\n\telif respostas[2] == False:\n\t\tpontos += 10\n\t\t\n\tif respostas[3] == True:\n\t\tpontos += 20\n\telif respostas[3] == False:\n\t\tpontos += 10\n\t\n\tif respostas[4] == True:\n\t\tpontos += 20\n\telif respostas[4] == False:\n\t\tpontos += 10\n\t\t\n\tif respostas[5] == True:\n\t\tpontos += 10\n\telif respostas[5] == False:\n\t\tpontos += 20\n\n\t\n\tif respostas[6] == \"Trabalho\":\n\t\tpontos += 10\n\telif respostas[6] == \"Lazer\":\n\t\tpontos += 20\n\telif respostas[6] == \"Misto\":\n\t\tpontos += 20\n\t\n\tfinal.append(pontos)\n\t\t\t\n\tif pontos <= 80:\n\t\tfinal.append(\"Risco Baixo\")\n\t\tfinal.append(valor*0.1)\n\telif pontos > 80 and pontos <= 100:\n\t\tfinal.append(\"Risco Medio\")\n\t\tfinal.append(valor*0.2)\n\telif pontos > 100:\n\t\tfinal.append(\"Risco Alto\")\n\t\tfinal.append(valor*0.3)\n\n\tprint final\n\treturn final\n\t\t\n\t\t\ncalcula_seguro(0.5, [21, True, False, True, True, True, 'Trabalho'])\n\t\t\n\n\n",
+      "name": "seguro.py"
+    },
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\ncalcula_seguro = getattr(undertest, 'calcula_seguro', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_basico(self):\n        assert calcula_seguro(2000.0, [21, True, True, True, True, True, 'Misto']) == [120, \"Risco Alto\", 600.0]\n\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "af9faeba4a7bb01c640a40913d153a68",
+  "iid": 5598058310008832,
+  "activity_revision": "1.0.0"
+}

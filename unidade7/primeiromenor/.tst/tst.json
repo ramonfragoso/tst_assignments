@@ -1,0 +1,13 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nprimeiro_menor = getattr(undertest, 'primeiro_menor', None)\n\nclass PublicTests(unittest.TestCase):\n\n   def test_exemplo(self):\n      assert primeiro_menor(4, [7, 5, 3, 9, 11, 8]) == 2\n\n   def test_exemplo_2(self):\n      assert primeiro_menor(3, [7, 5, 3, 9, 11, 8]) == -1\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    }
+  },
+  "iid": 6369632340410368,
+  "kind": "assignment",
+  "activity_revision": "1.0.0",
+  "name": null
+}

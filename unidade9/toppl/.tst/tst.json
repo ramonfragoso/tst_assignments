@@ -1,0 +1,19 @@
+{
+  "files": {
+    "toppl.py": {
+      "category": "answer",
+      "data": "# coding: utf-8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG\n########################################################################\n\n# Fun\u00e7\u00e3o que verifica se o aluno \u00e9 inscrito\ndef verifica_matricula(aluno, inscritos):\n\tinscrito = False\n\ti = 0\n\twhile i < len(inscritos) :\n\t\tif aluno == inscritos[i]:\n\t\t\tinscrito = True\n\t\t\treturn inscrito\n\t\telse:\n\t\t\ti += 1\n\treturn inscrito\n\t\n# Fun\u00e7\u00e3o principal\ndef filtra_alunos(alunos, inscritos, nota):\n\tindices = []\n\teliminados = 0\n\t\n\tfor i in range(len(alunos)):\n\t\tif (alunos[i][1] < nota) or not verifica_matricula(alunos[i][0], inscritos):\n\t\t\tindices.append(i)\n\t\t\teliminados += 1\n\t\t\t\n\tfor i in range(len(indices)-1, -1, -1):\n\t\talunos.pop(indices[i])\n\t\n\treturn eliminados\n\t\n\t\ninscritos = [121, 123, 124]\n\nalunos = [ (120,8.0), \n\t\t   (121,7.5), \n\t\t   (122,5.0), \n\t\t   (123,6.0), \n\t\t   (124,9.0), \n\t\t   (125,4.0) ]\n\t\t   \ninscritos = [121, 123, 124]\nalunos = [ (120,8.0), (121,7.5), (122,5.0), (123,6.0), (124,9.0), (125,4.0) ]\nassert filtra_alunos(alunos, inscritos, 7.0) == 4\nassert alunos == [ (121,7.5), (124,9.0) ]\n",
+      "name": "toppl.py"
+    },
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nfiltra_alunos = getattr(undertest, 'filtra_alunos', None)\n\nclass PublicTests(unittest.TestCase):\n\n    def test_1(self):\n        inscritos = [121, 123, 124]\n        alunos = [ (120,8.0), (121,7.5), (122,5.0), (123,6.0), (124,9.0), (125,4.0) ]\n        assert filtra_alunos(alunos, inscritos, 7.0) == 4\n        assert alunos == [ (121,7.5), (124,9.0) ]\n        \nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "b911b0e1c58f673e40fd5590ae87d367",
+  "iid": 5927302181421056,
+  "activity_revision": "1.0.0"
+}

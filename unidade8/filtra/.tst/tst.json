@@ -1,0 +1,19 @@
+{
+  "files": {
+    "public_tests.py": {
+      "category": "public",
+      "data": "import unittest\nimport sys\n\nundertest = __import__(sys.argv[-1].split(\".py\")[0])\nfiltra_divisores = getattr(undertest, 'filtra_divisores', None)\n\nclass PublicTests(unittest.TestCase):\n\n\n   def test_exemplo(self):\n       lista1 = [333, 121, 81]\n       assert filtra_divisores(lista1) == None\n       assert lista1 == [333,81]\n\nif __name__ == '__main__':\n    loader = unittest.TestLoader()\n    runner = unittest.TextTestRunner()\n    runner.run(loader.loadTestsFromModule(sys.modules[__name__]))\n",
+      "name": "public_tests.py"
+    },
+    "filtra.py": {
+      "category": "answer",
+      "data": "# coding: utf_8\n# Jos\u00e9 Ramon Fragoso da Silva 116210412\n# Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\ndef filtra_divisores(lista):\n\tcont = 0\n\tindices =  []\n\tfor i in range(len(lista)):\n\t\tsoma = 0\n\t\talgarismo = str(lista[i])\n\t\tfor j in range(len(algarismo)):\n\t\t\tsoma += int(algarismo[j])\n\t\tif int(algarismo)%soma != 0:\n\t\t\tlista.append(1)\n\t\t\tlista.pop(i)\n\t\t\tcont += 1\n\t\n\tfor i in range(0, cont):\n\t\tlista.pop()\n\tprint lista\n\t\nlista1 = [333, 121, 81]\nfiltra_divisores(lista1)\n",
+      "name": "filtra.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "056bf1d0a019ced883ef1d942e5095b2",
+  "iid": 5303849292136448,
+  "activity_revision": "1.0.0"
+}
