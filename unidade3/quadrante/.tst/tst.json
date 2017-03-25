@@ -1,0 +1,14 @@
+{
+  "files": {
+    "quadrante.py": {
+      "category": "answer",
+      "data": "#coding: utf_8\n#Jos\u00e9 Ramon Fraagoso da Silva 116210412\n#Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n#######################################################################\n\nnum = int(raw_input())\n\nang = (num % 360)\n\n\nif num%90 == 0 or num%180 == 0 or num%270 == 0 or num%360 == 0:\n\tprint\"Sobre eixos\"\n\nelif (ang > 0) and (ang < 90):\n\tprint\"Quadrante 1\"\n\t\nelif (ang > 90) and (ang < 180):\n\tprint\"Quadrante 2\"\n\t\nelif (ang > 180) and (ang < 270):\n\tprint\"Quadrante 3\"\n\t\nelif (ang > 270) and (ang < 360):\n\tprint\"Quadrante 4\"\n",
+      "name": "quadrante.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "fffd0b05f724043b4841286752b647dd",
+  "iid": 5580628997177344,
+  "activity_revision": "1.0.0"
+}

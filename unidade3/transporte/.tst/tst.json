@@ -1,0 +1,14 @@
+{
+  "files": {
+    "transporte.py": {
+      "category": "answer",
+      "data": "#coding: utf_8\n#Jos\u00e9 Ramon Fraagoso da Silva 116210412\n#Prog1 UFCG jose.ramon.silva@ccc.ufcg.edu.br\n########################################################################\n\nn = int(raw_input())\ndin = float(raw_input())\n\ntav = n*100.0\noni = 22.0*n\n\nif n > 4:\n\ttaxi = (200.0 * (n%4))\nelse:\n\ttaxi = 200.0\n\t\n#====#====#====#====#====#====#====#====#====#====#====#====#====#====#=\n\nif (din > tav):\n\tprint\"TAV. R$ %.2f\"%tav\n\t\nelif (din > taxi):\n\tprint\"T\u00e1xi. R$ %.2f\"%taxi\n\t\nelif (din > oni):\n\tprint\"\u00d4nibus. R$ %.2f\"%oni\n\t\n\n",
+      "name": "transporte.py"
+    }
+  },
+  "kind": "assignment",
+  "name": null,
+  "checksum": "71b5f8b109d655095fc4bfd77675cf5d",
+  "iid": 5467257564037120,
+  "activity_revision": "1.0.1"
+}
